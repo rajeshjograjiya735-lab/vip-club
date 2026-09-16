@@ -3,701 +3,381 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HindiShayari & All YONO Apps Hub (Mega 1000+ Edition)</title>
+  <title>ShortScript AI & Kahani Hub</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #f8fafc; color: #222; padding-bottom: 85px; user-select: none; }
+    body { background-color: #0c0f1d; color: #f1f5f9; padding-bottom: 85px; user-select: none; }
 
-    /* Top Strip Ad */
-    .header-ad-strip {
-      background: linear-gradient(90deg, #f59e0b, #ef4444);
-      color: #fff;
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    /* Owner Bar */
-    .owner-bar {
-      background: #0f172a;
-      color: #e2e8f0;
-      font-size: 12px;
-      padding: 6px 14px;
+    .site-header {
+      background: #13182e;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #1e293b;
-    }
-    .owner-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      color: #38bdf8;
-    }
-
-    /* Language Bar */
-    .lang-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: #1e293b;
-      padding: 8px 12px;
-    }
-    .lang-btn {
-      background: #334155;
-      color: #cbd5e1;
-      border: 1px solid #475569;
-      padding: 5px 14px;
-      border-radius: 16px;
-      font-size: 12px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .lang-btn.active {
-      background: linear-gradient(135deg, #ec4899, #f43f5e);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    /* Header */
-    .app-bar {
-      background: linear-gradient(135deg, #1e1b4b, #4338ca, #be185d);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
+      border-bottom: 1px solid #1e2640;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
-    .app-bar-left { display: flex; align-items: center; gap: 14px; font-size: 18px; font-weight: bold; }
-    .app-bar-right { display: flex; align-items: center; gap: 16px; font-size: 18px; }
-    .app-bar i { cursor: pointer; }
-    .heart-red { color: #ff3366; }
-    .crown-gold { color: #facc15; }
-    .tg-blue { color: #38bdf8; }
-    .web-globe { color: #4ade80; }
-
-    /* Home Action Banner */
-    .yt-promo-card {
-      background: linear-gradient(135deg, #dc2626, #991b1b);
-      color: #ffffff;
-      margin: 12px 14px 12px 14px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-      cursor: pointer;
-    }
-    .yt-promo-text h3 { font-size: 15px; margin-bottom: 2px; }
-    .yt-promo-text p { font-size: 12px; opacity: 0.9; }
-    .yt-badge {
-      background: #fff;
-      color: #dc2626;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* Scroll Menu */
-    .scroll-menu {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto !important;
-      white-space: nowrap;
-      padding: 8px 14px;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      -webkit-overflow-scrolling: touch;
-      touch-action: pan-x;
-    }
-    .scroll-menu::-webkit-scrollbar { display: none; }
-    .menu-chip {
-      background: #f1f5f9;
-      color: #334155;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid #cbd5e1;
-      flex-shrink: 0;
-    }
-    .menu-chip.active {
-      background: linear-gradient(135deg, #4338ca, #be185d);
-      color: #fff;
-      border-color: transparent;
-    }
-    .menu-chip.yono-chip {
-      background: #dcfce7;
-      color: #15803d;
-      border-color: #86efac;
-    }
-    .menu-chip.special-chip {
-      background: linear-gradient(135deg, #f59e0b, #ef4444);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    /* Category List */
-    .category-list { list-style: none; background: #fff; margin: 0; padding: 0; }
-    .category-item {
-      padding: 16px 20px;
-      font-size: 16px;
-      font-weight: 500;
-      color: #1f2937;
-      border-bottom: 1px solid #f1f5f9;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .category-item:active { background-color: #ede9fe; color: #4338ca; }
-
-    /* Views */
-    #detail-view, #prompts-view, #yono-view { display: none; }
-    .cards-container { padding: 12px; display: flex; flex-direction: column; gap: 12px; }
-
-    /* Top banner inside YONO view to open Website Store */
-    .direct-website-btn-bar {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #fff;
-      margin: 10px 14px 4px 14px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
-    }
-    .direct-website-btn-bar span { font-weight: bold; font-size: 13px; }
-
-    /* Search Bar in YONO & Prompts & Shayari View */
-    .global-search-box {
-      margin: 8px 14px 4px 14px;
-      position: relative;
-    }
-    .global-search-box input {
-      width: 100%;
-      padding: 11px 16px 11px 40px;
-      border-radius: 25px;
-      border: 1px solid #cbd5e1;
-      font-size: 14px;
-      outline: none;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
-    .global-search-box i {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #94a3b8;
-    }
-
-    /* YONO Clean Short Cards */
-    .yono-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
-      gap: 12px;
-    }
-    .yono-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .yono-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #0284c7, #2563eb);
-      color: #fff;
+    .logo-area { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; color: #fff; }
+    
+    /* PERFECT EMBEDDED LOGO ICON */
+    .app-custom-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 19px;
-      flex-shrink: 0;
-      box-shadow: 0 3px 6px rgba(37, 99, 235, 0.2);
-    }
-    .yono-info { min-width: 0; }
-    .yono-info h4 {
-      font-size: 15px;
-      font-weight: 700;
       color: #0f172a;
-      margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .yono-meta {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-    }
-    .yono-tag {
-      background: #fef08a;
-      color: #854d0e;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .yono-rating { color: #f59e0b; font-weight: 600; }
-    .yono-download-btn {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #fff;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      flex-shrink: 0;
-      box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+      border: 1px solid #fde047;
     }
 
-    /* Prompts Card */
-    .prompt-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-left: 5px solid #dc2626;
+    .lang-bar {
+      background: #1a223f;
+      padding: 8px 16px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid #1e2640;
     }
-    .prompt-tag {
-      display: inline-block;
+    .lang-bar::-webkit-scrollbar { display: none; }
+    .lang-chip {
+      background: #13182e;
+      color: #94a3b8;
+      padding: 4px 12px;
+      border-radius: 12px;
       font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #2a3456;
+      flex-shrink: 0;
+    }
+    .lang-chip.active { background: #f59e0b; color: #0c0f1d; border-color: #f59e0b; font-weight: 700; }
+
+    /* PROMPT BANNER TICKER */
+    .prompt-banner-ticker {
+      background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca);
+      margin: 10px 14px;
+      padding: 12px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 2px solid #818cf8;
+      box-shadow: 0 4px 15px rgba(67, 56, 202, 0.4);
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: bannerScroll 25s linear infinite;
+    }
+    .ticker-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #6366f1;
+      padding: 8px 14px;
+      border-radius: 8px;
+      margin: 0 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .ticker-card i { color: #f59e0b; }
+    @keyframes bannerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* SCROLLABLE CATEGORIES BAR */
+    .category-scroll-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 8px 14px;
+      background: #0c0f1d;
+      border-bottom: 1px solid #1e2640;
+    }
+    .category-scroll-bar::-webkit-scrollbar { display: none; }
+    .cat-chip {
+      background: #13182e;
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #2a3456;
+      flex-shrink: 0;
+    }
+    .cat-chip.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+
+    .hero-section {
+      background: linear-gradient(135deg, #13182e, #1a223f);
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #1e2640;
+    }
+    .hero-section h1 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #f8fafc; }
+    .search-box-wrap { position: relative; max-width: 500px; margin: 0 auto; }
+    .search-box-wrap input {
+      width: 100%;
+      padding: 9px 14px 9px 38px;
+      border-radius: 20px;
+      border: 1px solid #2a3456;
+      font-size: 12px;
+      outline: none;
+      background: #0c0f1d;
+      color: #fff;
+    }
+    .search-box-wrap i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 12px; }
+
+    .prompts-grid {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media(min-width: 550px) {
+      .prompts-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(min-width: 950px) {
+      .prompts-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .prompt-card {
+      background: #13182e;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #1e2640;
+      display: flex;
+      flex-direction: column;
+      border-left: 5px solid #f59e0b;
+    }
+    .card-content {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 10px;
       font-weight: bold;
-      color: #dc2626;
-      background: #fee2e2;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
       padding: 3px 8px;
       border-radius: 4px;
       margin-bottom: 8px;
+      width: fit-content;
     }
-    .prompt-title { font-size: 16px; font-weight: bold; color: #111827; margin-bottom: 8px; }
-    .prompt-box {
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 13px;
-      color: #334155;
-      line-height: 1.5;
-      white-space: pre-line;
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+    .prompt-text-box {
+      background: #0c0f1d;
+      border: 1px dashed #2a3456;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 12px;
+      color: #94a3b8;
       margin-bottom: 12px;
+      line-height: 1.5;
       filter: blur(4px);
       user-select: none;
       opacity: 0.6;
       transition: all 0.2s ease;
     }
-    .unlock-prompt-btn {
+    .unlock-btn {
       background: linear-gradient(135deg, #f59e0b, #ef4444);
       color: #fff;
       border: none;
-      padding: 10px 18px;
+      padding: 10px 14px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 7px;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
 
-    /* Shayari Card */
-    .shayari-card {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-      border: 1px solid #e5e7eb;
-    }
-    .card-banner {
-      min-height: 240px;
-      position: relative;
-      background-size: cover;
-      background-position: center;
+    .pagination-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px 18px;
-      text-align: center;
+      gap: 10px;
+      padding: 20px 10px;
+      background: #0c0f1d;
     }
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-    .card-text {
-      position: relative;
-      z-index: 2;
-      color: #ffffff;
-      font-size: 16px;
-      line-height: 1.7;
-      font-weight: 500;
-      white-space: pre-line;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-    }
-    .style-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 14px;
-      background: #f8fafc;
-      border-top: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 12px;
-      color: #475569;
-    }
-    .style-btn {
-      background: #fff;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 5px 10px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: #334155;
-    }
-    .card-footer {
-      display: flex;
-      justify-content: space-around;
-      padding: 12px 0;
-      background: #ffffff;
-    }
-    .action-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      color: #374151;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 6px 16px;
+    .page-btn {
+      background: #1a223f;
+      color: #fff;
+      border: 1px solid #2a3456;
+      padding: 8px 16px;
       border-radius: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    .action-btn i { font-size: 18px; color: #4338ca; }
+    .page-btn:hover { background: #f59e0b; color: #0c0f1d; border-color: #f59e0b; }
+    .page-info {
+      font-size: 12px;
+      color: #94a3b8;
+      padding: 0 6px;
+    }
 
-    /* Credits */
-    .app-footer-credit {
+    .app-footer {
+      background: #13182e;
+      border-top: 1px solid #1e2640;
       text-align: center;
-      padding: 24px 12px;
-      font-size: 13px;
-      color: #64748b;
+      padding: 20px;
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.6;
     }
+    .app-footer span { color: #f59e0b; font-weight: bold; }
 
-    /* Fixed Footer Ad */
     .bottom-ad {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 58px;
-      background: linear-gradient(135deg, #1e1b4b, #4338ca, #be185d) !important;
-      color: #ffffff !important;
+      height: 54px;
+      background: linear-gradient(135deg, #1e1b4b, #4338ca, #be185d);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
-      z-index: 99999;
+      z-index: 9999;
       cursor: pointer;
       border-top: 2px solid #facc15;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-    }
-    .bottom-ad-text {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .bottom-ad-text span {
-      color: #facc15;
-      font-weight: bold;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
     }
     .ad-btn-badge {
-      background: #ffffff !important;
-      color: #be185d !important;
+      background: #ffffff;
+      color: #be185d;
       font-weight: 800;
-      padding: 8px 18px;
+      padding: 6px 16px;
       border-radius: 20px;
-      font-size: 12px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      font-size: 11px;
     }
 
-    /* Popup Modal */
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.78);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .popup-box {
-      background: #ffffff;
-      border-radius: 18px;
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-      overflow: hidden;
-    }
-    .popup-header {
-      background: linear-gradient(135deg, #f59e0b, #ef4444);
-      color: #fff;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .popup-body { padding: 20px; }
-    .popup-body p { font-size: 14px; color: #4b5563; margin-bottom: 18px; }
-    .popup-cta-btn {
-      background: #10b981;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 25px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .popup-close-btn {
-      margin-top: 12px;
-      background: none;
-      border: none;
-      color: #9ca3af;
-      font-size: 13px;
-      cursor: pointer;
-      text-decoration: underline;
-    }
     .toast {
       position: fixed;
       bottom: 75px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0,0,0,0.85);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #f59e0b;
       color: #fff;
       padding: 8px 18px;
       border-radius: 20px;
-      font-size: 13px;
+      font-size: 12px;
       display: none;
-      z-index: 200;
+      z-index: 200000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 <body>
 
-  <!-- Entry Popup -->
-  <div class="popup-overlay" id="start-popup">
-    <div class="popup-box">
-      <div class="popup-header">🎉 Special Welcome Reward!</div>
-      <div class="popup-body">
-        <p>Unlock 1000+ VIP Shayari, AI Story Prompts & YONO Offers!</p>
-        <button class="popup-cta-btn" onclick="handlePopupClick()">🎁 Claim Now</button>
-        <br>
-        <button class="popup-close-btn" onclick="closePopup()">Skip & Continue</button>
-      </div>
+  <!-- Header with Guaranteed Logo Styling -->
+  <div class="site-header">
+    <div class="logo-area">
+      <div class="app-custom-logo"><i class="fa-solid fa-bolt"></i></div>
+      <span>ShortScript AI Studio</span>
     </div>
+    <i class="fa-brands fa-telegram" style="font-size:22px; color:#38bdf8; cursor:pointer;" onclick="openTelegram()"></i>
   </div>
 
-  <!-- Top Ad Strip -->
-  <div class="header-ad-strip" onclick="openDirectAd()">
-    🎁 Daily Bonus: Click here to claim today's VIP reward! 🎁
-  </div>
-
-  <!-- Owner Strip -->
-  <div class="owner-bar">
-    <div class="owner-badge"><i class="fa-solid fa-circle-check"></i> Owner: Jogarajiya Rajesh</div>
-    <span style="font-size:11px; opacity:0.8;">Official Mega Hub (1000+ Edition)</span>
-  </div>
-
-  <!-- Language Switcher -->
   <div class="lang-bar">
-    <button class="lang-btn active" id="btn-hi" onclick="changeLanguage('hi')">🇮🇳 हिन्दी</button>
-    <button class="lang-btn" id="btn-gu" onclick="changeLanguage('gu')">🦁 ગુજરાતી</button>
-    <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">🌐 English</button>
+    <div class="lang-chip active" onclick="changeLanguage('hi', this)">🇮🇳 हिंदी (Hindi)</div>
+    <div class="lang-chip" onclick="changeLanguage('gu', this)">🦁 ગુજરાતી (Gujarati)</div>
+    <div class="lang-chip" onclick="changeLanguage('en', this)">🌐 English</div>
   </div>
 
-  <!-- Screen 1: Home View -->
-  <div id="category-view">
-    <div class="app-bar">
-      <div class="app-bar-left">
-        <i class="fa-solid fa-bars" onclick="openDirectAd()"></i>
-        <span id="app-title">मेगा संदेश Hub...</span>
-      </div>
-      <div class="app-bar-right">
-        <i class="fa-solid fa-globe web-globe" onclick="openWebsiteStore()" title="All YONO Store Website"></i>
-        <i class="fa-brands fa-telegram tg-blue" onclick="openTelegramChannel()" title="Official Telegram"></i>
-        <i class="fa-solid fa-crown crown-gold" onclick="openDirectAd()"></i>
-        <i class="fa-solid fa-heart heart-red" onclick="openDirectAd()"></i>
-      </div>
-    </div>
-
-    <!-- YouTube Shorts Banner -->
-    <div class="yt-promo-card" onclick="openPromptsView()">
-      <div class="yt-promo-text">
-        <h3><i class="fa-brands fa-youtube"></i> 1000+ Viral AI Shorts Prompts</h3>
-        <p>Unlock unlimited scripts & video prompts!</p>
-      </div>
-      <div class="yt-badge">
-        <span>Open Hub</span> <i class="fa-solid fa-arrow-right"></i>
-      </div>
-    </div>
-
-    <!-- Scroll Menu -->
-    <div class="scroll-menu">
-      <div class="menu-chip active" onclick="filterChips('all')"><i class="fa-solid fa-fire"></i> All 1000+</div>
-      <div class="menu-chip yono-chip" onclick="openYonoView()"><i class="fa-solid fa-gamepad"></i> All YONO Apps (50+)</div>
-      <div class="menu-chip" onclick="openWebsiteStore()"><i class="fa-solid fa-store"></i> YONO Website Store</div>
-      <div class="menu-chip" onclick="filterChips('suvichar')"><i class="fa-solid fa-brain"></i> Suvichar</div>
-      <div class="menu-chip" onclick="filterChips('jokes')"><i class="fa-solid fa-face-laugh-squint"></i> Jokes</div>
-      <div class="menu-chip" onclick="filterChips('morning')"><i class="fa-solid fa-sun"></i> Morning</div>
-      <div class="menu-chip special-chip" onclick="openDirectAd()"><i class="fa-solid fa-gift"></i> Special Offer</div>
-    </div>
-
-    <!-- Category List -->
-    <ul class="category-list" id="cat-list"></ul>
-
-    <div class="app-footer-credit">
-      App Created by <b>Jogarajiya Rajesh</b> ✨<br>
-      All Rights Reserved © 2026
+  <!-- SCRIPT BANNER TICKER -->
+  <div class="prompt-banner-ticker" onclick="openDirectAd()">
+    <div class="ticker-track">
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 👵 Dadi & Magic Rabbit Script</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🦁 Jungle Motivation Story</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 😱 Horror Mystery Shorts</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 👑 Akbar Birbal Wit Script</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🚀 Billionaire Daily Habits</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🕉️ Mahakal Tandav Script</div>
+      <!-- Duplicate set for infinite loop -->
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 👵 Dadi & Magic Rabbit Script</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🦁 Jungle Motivation Story</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 😱 Horror Mystery Shorts</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 👑 Akbar Birbal Wit Script</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🚀 Billionaire Daily Habits</div>
+      <div class="ticker-card"><i class="fa-solid fa-wand-magic-sparkles"></i> 🕉️ Mahakal Tandav Script</div>
     </div>
   </div>
 
-  <!-- Screen 2: All YONO Apps Download Hub Page -->
-  <div id="yono-view">
-    <div class="app-bar" style="background: linear-gradient(135deg, #065f46, #047857, #0f766e);">
-      <div class="app-bar-left">
-        <i class="fa-solid fa-arrow-left" onclick="showCategoryView()"></i>
-        <i class="fa-solid fa-house" onclick="showCategoryView()"></i>
-        <span>All YONO & Rummy Hub</span>
-      </div>
-      <div class="app-bar-right">
-        <i class="fa-solid fa-globe web-globe" onclick="openWebsiteStore()"></i>
-        <i class="fa-brands fa-telegram tg-blue" onclick="openTelegramChannel()"></i>
-      </div>
-    </div>
+  <div class="category-scroll-bar">
+    <div class="cat-chip active" onclick="filterByCategory('all', this)">🔥 All Stories</div>
+    <div class="cat-chip" onclick="filterByCategory('Dadi', this)">👵 Dadi & Rabbit</div>
+    <div class="cat-chip" onclick="filterByCategory('Jungle', this)">🦁 Jungle Motivation</div>
+    <div class="cat-chip" onclick="filterByCategory('Horror', this)">😱 Horror Mystery</div>
+    <div class="cat-chip" onclick="filterByCategory('Fox', this)">🦊 Clever Fox</div>
+    <div class="cat-chip" onclick="filterByCategory('Akbar', this)">👑 Akbar Birbal</div>
+    <div class="cat-chip" onclick="filterByCategory('Elephant', this)">🐘 Elephant & Tailor</div>
+    <div class="cat-chip" onclick="filterByCategory('Owl', this)">🦉 Wise Owl</div>
+    <div class="cat-chip" onclick="filterByCategory('Billionaire', this)">🚀 Billionaire Habits</div>
+    <div class="cat-chip" onclick="filterByCategory('Mahakal', this)">🕉️ Mahakal Tandav</div>
+    <div class="cat-chip" onclick="filterByCategory('AI', this)">💡 AI Future 2050</div>
+    <div class="cat-chip" onclick="filterByCategory('Krishna', this)">🌊 Krishna Leela</div>
+    <div class="cat-chip" onclick="filterByCategory('Ramayan', this)">🏹 Ramayan Jatayu</div>
+  </div>
 
-    <div class="direct-website-btn-bar" onclick="openWebsiteStore()">
-      <span><i class="fa-solid fa-store"></i> Visit allyonostorelist.com Official Store</span>
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-    <div class="global-search-box">
+  <div class="hero-section">
+    <h1 id="hero-title">🎬 Viral AI Dadi & Kahaniya Scripts</h1>
+    <div class="search-box-wrap">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="yono-search" placeholder="Search 50+ YONO, Rummy, 777 apps..." onkeyup="filterYonoApps()">
-    </div>
-
-    <div class="cards-container" id="yono-apps-container"></div>
-
-    <div class="app-footer-credit">
-      App Created by <b>Jogarajiya Rajesh</b> ✨<br>
-      All Rights Reserved © 2026
+      <input type="text" id="prompt-search" placeholder="Search stories & scripts..." onkeyup="filterScripts()">
     </div>
   </div>
 
-  <!-- Screen 3: Shorts Prompts Studio (1000+ Generated Dynamically) -->
-  <div id="prompts-view">
-    <div class="app-bar" style="background: linear-gradient(135deg, #7f1d1d, #b91c1c, #991b1b);">
-      <div class="app-bar-left">
-        <i class="fa-solid fa-arrow-left" onclick="showCategoryView()"></i>
-        <i class="fa-solid fa-house" onclick="showCategoryView()"></i>
-        <span>1000+ AI Prompts Studio</span>
-      </div>
-      <div class="app-bar-right">
-        <i class="fa-brands fa-telegram tg-blue" onclick="openTelegramChannel()"></i>
-        <i class="fa-solid fa-share-nodes" onclick="shareApp()"></i>
-      </div>
-    </div>
+  <div class="prompts-grid" id="grid-container"></div>
 
-    <div class="global-search-box" style="margin-top: 12px;">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="prompt-search" placeholder="Search 1000+ AI Story & Video Prompts..." onkeyup="filterPromptCards()">
-    </div>
-
-    <div class="cards-container" id="prompts-container"></div>
-
-    <div class="app-footer-credit">
-      App Created by <b>Jogarajiya Rajesh</b> ✨<br>
-      All Rights Reserved © 2026
-    </div>
+  <div class="pagination-container" id="pagination-bar">
+    <button class="page-btn" onclick="changePage(-1)"><i class="fa-solid fa-angle-left"></i> Prev</button>
+    <span class="page-info" id="page-indicator">Page 1 of 500</span>
+    <button class="page-btn" onclick="changePage(1)">Next <i class="fa-solid fa-angle-right"></i></button>
   </div>
 
-  <!-- Screen 4: Detail Cards View -->
-  <div id="detail-view">
-    <div class="app-bar">
-      <div class="app-bar-left">
-        <i class="fa-solid fa-arrow-left" onclick="showCategoryView()"></i>
-        <i class="fa-solid fa-house" onclick="showCategoryView()"></i>
-        <span id="detail-title">Shayari Hub</span>
-      </div>
-      <div class="app-bar-right">
-        <i class="fa-brands fa-telegram tg-blue" onclick="openTelegramChannel()"></i>
-        <i class="fa-solid fa-share-nodes" onclick="shareApp()"></i>
-        <i class="fa-solid fa-heart heart-red" onclick="openDirectAd()"></i>
-      </div>
-    </div>
-    
-    <div class="global-search-box" style="margin-top: 12px;">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="shayari-search" placeholder="Search Shayari in this category..." onkeyup="filterShayariCards()">
-    </div>
-
-    <div class="cards-container" id="cards-container"></div>
+  <div class="app-footer">
+    ShortScript AI & Kahani Hub Studio ✨<br>
+    Owner: <span>Jogarajiya Rajesh</span><br>
+    All Rights Reserved © 2026
   </div>
 
-  <!-- Solid Visible Footer Ad -->
   <div class="bottom-ad" onclick="openDirectAd()">
-    <div class="bottom-ad-text">
-      ⚡ <span>Special Offer:</span> Tap & Win Coins!
-    </div>
-    <div class="ad-btn-badge">
-      Claim Now <i class="fa-solid fa-arrow-right"></i>
-    </div>
+    <div style="font-size:12px; font-weight:600;">⚡ <span>Bonus Offer:</span> Claim ₹500 Free!</div>
+    <div class="ad-btn-badge">Claim Now</div>
   </div>
 
-  <div class="toast" id="toast">Copied to clipboard!</div>
+  <div class="toast" id="toast">Ad Opened & Script Unlocked! ✅</div>
 
   <script>
     const adLinks = [
@@ -706,413 +386,205 @@
       "https://www.profitableratecpmnetwork.com/tk3vn8t6?key=e8899d716848a1a083e61660ed42da9c"
     ];
     let adIndex = 0;
-    let clickCount = 0;
-
     const telegramLink = "https://t.me/+UjKORJRBo7W7p5ke";
-    const websiteStoreLink = "https://allyonostorelist.com";
-
-    const yonoAppsList = [
-      { name: "Rumble Rummy", bonus: "₹500 Bonus", icon: "fa-dice", link: "https://www.rumblerummy6.cc/?code=UC02RMUM6XR&t=1768803275" },
-      { name: "GoGo 777", bonus: "₹777 Free", icon: "fa-rocket", link: "https://www.gogogo777.space/?code=V4U5WHTRKXU&t=1768803326" },
-      { name: "Hindi 777", bonus: "VIP Club", icon: "fa-crown", link: "https://www.hindi777agent.org/?code=7LFHJ5TEMCM&t=1768803426" },
-      { name: "OK Rummy", bonus: "₹51 Bonus", icon: "fa-heart", link: "https://www.okrummy24.com/?code=H2G33G9U8XV&t=1768803505" },
-      { name: "777 Game", bonus: "₹100 Free", icon: "fa-gem", link: "https://www.777game2.com/?code=H53BE9Q9WE4&t=1768803558" },
-      { name: "Yes Spin", bonus: "Instant Spin", icon: "fa-arrows-rotate", link: "https://www.yesspin.co/?code=47TEESUU67C&t=1768803625" },
-      { name: "Game Rummy", bonus: "₹41 Bonus", icon: "fa-gamepad", link: "https://gamerummy.cc/?code=Q6W6SMR3YT4&t=1768803691" },
-      { name: "INR Club", bonus: "Cash Rewards", icon: "fa-indian-rupee-sign", link: "http://clubinr5.xyz/?code=9VCBZDAHEQ5&t=1768803731" },
-      { name: "Rummy Ludo", bonus: "₹150 Bonus", icon: "fa-chess-board", link: "https://rummyludogame.vip/?code=UWPES667MM5&t=1768803773" },
-      { name: "Rummy 91M", bonus: "Daily Spin", icon: "fa-trophy", link: "https://www.rummy91m.bet/?code=4KT7VAKBS7R&t=1768803933" },
-      { name: "Ind Rummy", bonus: "₹75 Bonus", icon: "fa-spade", link: "https://indrummyq.com/?code=2BABFER7MZC&t=1768804086" },
-      { name: "ABC Rummy", bonus: "Fast Cashout", icon: "fa-clover", link: "https://www.abcrummy44.com/?code=75CHWKPH3HD&t=1768804258" },
-      { name: "Jaiho 777", bonus: "₹777 Bonus", icon: "fa-award", link: "https://www.jaiho777agent7.com/?code=GC2V7WGWLMlM&t=1768804315" },
-      { name: "Y754 Game", bonus: "VIP Club", icon: "fa-fire", link: "https://www.y754.com/?code=4SWJYBM65F4&t=1768804350" },
-      { name: "Jaiho Slots", bonus: "Mega Jackpot", icon: "fa-coins", link: "https://www.jaihoslots27.com/?code=EGP8QJ2A6SF&t=1768804390" },
-      { name: "Share 977", bonus: "₹977 Bonus", icon: "fa-share-nodes", link: "https://share977.com/?code=GFVFXCK84L9&t=1768804459" },
-      { name: "Hi Rummy", bonus: "₹51 Bonus", icon: "fa-hand-peace", link: "https://www.hirummy-agent.com/?code=RX3AAVKARYA&t=1768804514" },
-      { name: "Jaiho Bonus", bonus: "₹100 Bonus", icon: "fa-gift", link: "https://jaihorummybonus.com/?code=E749PBC4VLK&t=1768804569" },
-      { name: "Maha Games", bonus: "Mega Spin", icon: "fa-bolt", link: "https://mahagames.homes/?code=J24PEL7YPJE&t=1768804971" },
-      { name: "Ind Club", bonus: "₹41 Free", icon: "fa-shield-halved", link: "https://www.indcluba.com/?code=34U228NGAX7&t=1768805081" },
-      { name: "Saga Slots", bonus: "Super Slots", icon: "fa-dice-six", link: "https://www.sagaslots4.com/?code=0QHBAU6S3M5&t=1768805141" },
-      { name: "Love Rummy", bonus: "Romantic Win", icon: "fa-heart", link: "https://www.loverummy1.com/?code=AFCSY24SVZR&t=1768805187" },
-      { name: "Jaiho Spin", bonus: "Lucky 17", icon: "fa-circle-notch", link: "https://17jaihospin.com/?code=7TAL259MPA2&t=1768805254" },
-      { name: "Jaiho Arcade", bonus: "Arcade Win", icon: "fa-gamepad", link: "https://www.jaihoarcade24.com/?code=AZDNWCS5JJN&t=1768805318" },
-      { name: "Slots Spin", bonus: "Spin & Win", icon: "fa-circle-play", link: "https://www.slotsspinf.com/?code=XJBKFNDTRT1&t=1768805398" },
-      { name: "Ind Slots", bonus: "Instant Cash", icon: "fa-coins", link: "https://indslotsf.com/?code=EYMGWXC9Q1V&t=1768805462" },
-      { name: "Jaiho Win", bonus: "₹150 Win", icon: "fa-trophy", link: "https://www.jaihowin15.com/?code=1XNXHVTTU98&t=1768805528" },
-      { name: "Million Share", bonus: "Big Pool", icon: "fa-sack-dollar", link: "https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com/?code=ADE4DND6MHQ&t=1768805703" },
-      { name: "Spin Winner", bonus: "Winner Pass", icon: "fa-medal", link: "https://13spinwinner.com/?code=SDNC6NUPLG2&t=1768805775" },
-      { name: "Rummy 77", bonus: "₹77 Free", icon: "fa-dice", link: "https://rummy77a.com/?code=F3VZF9QVLL3&t=1768805992" },
-      { name: "Rummy 888", bonus: "₹888 VIP", icon: "fa-crown", link: "https://rummy888vip18.com/?code=TPUKD137Z3Z&t=1768806074" },
-      { name: "Ever 777", bonus: "Top Ranked", icon: "fa-star", link: "https://ever777K.TOP/?code=ARHSJLGWLX8&t=1768806112" },
-      { name: "Boss Rummy", bonus: "Boss Table", icon: "fa-user-tie", link: "https://www.bossrummyt.com/?code=9HFX88EG8S7&t=1768806183" },
-      { name: "Joy Rummy", bonus: "Instant Joy", icon: "fa-face-laugh-beam", link: "https://www.joyrummy.xyz/?code=J5KL5ZZ67ZN&t=1768806486" },
-      { name: "INR Rummy", bonus: "Real INR", icon: "fa-indian-rupee-sign", link: "https://inrrummy1.win/?code=JMQSQ88BN1Z&t=1768806607" },
-      { name: "MQM Pro", bonus: "₹406 Pass", icon: "fa-mobile-screen", link: "https://mqmshare.pro?pid=406262128&pkg=com.mqm.bet" },
-      { name: "Diwa 777", bonus: "Diwa Special", icon: "fa-gem", link: "https://sharediwa777.cc?pid=438698380&pkg=com.diwa777wh.com" },
-      { name: "MBM Bet", bonus: "₹500 Deposit", icon: "fa-trophy", link: "https://www.mbmbet9.com/?code=GD34NK1VE62&t=1768800797" },
-      { name: "Uono Slots", bonus: "Daily Slots", icon: "fa-store", link: "https://www.uonoslots.store/?code=PJBNEFM6TXJ&t=1768800985" },
-      { name: "789 Jackpots", bonus: "₹789 Jackpot", icon: "fa-coins", link: "https://789jackpots.in/?code=J7ZGU4JTZFM&t=1768801440" },
-      { name: "Spin 101", bonus: "101 Spins", icon: "fa-arrows-rotate", link: "https://spin101-h.net/?code=P4CZKF5GJDP&t=1768801680" },
-      { name: "Slots Winner", bonus: "Mega Winner", icon: "fa-medal", link: "https://slotswinner9.com/?code=K4ELKKSSFR2&t=1768802005" },
-      { name: "Spin Gold", bonus: "Gold Tier", icon: "fa-award", link: "https://spingoldappagents.com/?code=HLT9PUKQGED&t=1768802209" },
-      { name: "Spin 777", bonus: "₹777 Spin", icon: "fa-clover", link: "https://spin777f.com/?code=7V96MBBCJ3V&t=1768802336" },
-      { name: "Spin Lucky", bonus: "Lucky Bonus", icon: "fa-dice", link: "https://www.spinluckys.com?code=FQ0Y31WPC47&t=1719821718" },
-      { name: "Bingo 101", bonus: "Bingo Club", icon: "fa-table-cells-large", link: "https://bingo101ee.net/?code=6YFMCE3QKKK&t=1768802744" },
-      { name: "Bet 213", bonus: "₹213 Free", icon: "fa-mobile-screen-button", link: "https://bet213app.com/?code=2QTMN5LXD92&t=1768802964" },
-      { name: "Diwa King", bonus: "King Pass", icon: "fa-crown", link: "https://diwakingshare.pw?pid=474065381&channel=2010002&pkg=com.diwaking0002.com" },
-      { name: "Diwa Play", bonus: "Play Rewards", icon: "fa-play", link: "http://diwaplayshare.com?pid=309230756&channel=2010002&pkg=com.diwaplaywhl.app" },
-      { name: "Money Rummy", bonus: "₹1000 Free", icon: "fa-money-bill-wave", link: "https://moneyrummykk.com/?code=T1XZH9DKCA8&t=1788920556" },
-      { name: "Win Rummy", bonus: "₹250 Win", icon: "fa-trophy", link: "https://www.winrummy25.com/?code=8JTBRNE8YVW&t=1785291409" },
-      { name: "MQM Global", bonus: "Global VIP", icon: "fa-globe", link: "https://mqmshare.com?pid=406262128&pkg=com.mqm.bet" }
-    ];
-
-    /* Dynamic Generator for 1000+ AI Prompts */
-    const promptsList = [];
-    const promptTags = ["🔥 Trending Story", "😱 Horror Twist", "⚡ Sigma Motivation", "🕉️ Bhakti Story", "💡 Tech AI", "💖 Romantic Drama"];
-    for (let i = 1; i <= 1000; i++) {
-      promptsList.push({
-        id: i,
-        tag: promptTags[i % promptTags.length],
-        title: `Mega Viral AI Shorts Script #${i}: विशेष कहानी और दृश्य`,
-        box: `Create an ultra-engaging 50-second viral YouTube Shorts / Reels script #${i} with immersive Pixar-style 3D animation, emotional voiceover in Hindi, dynamic hook in the first 3 seconds, professional background sound effects, and hyper-realistic cinematic prompt tags.`
-      });
-    }
-
-    /* Dynamic Generator for 1000+ Shayari Items across 20+ Categories */
-    const categoryDatabase = {};
-    const baseCategories = [
-      "जन्मदिन संदेश", "सालगिरह की शुभकामनाएं", "गुड मॉर्निंग संदेश", "स्वीट गुड मॉर्निंग मैसेज",
-      "गर्लफ्रेंड के लिए गुड मॉर्निंग संदेश", "गुड नाइट संदेश", "प्रेम संदेश", "गर्लफ्रेंड लव मैसेज",
-      "वैलेंटाइन डे", "दोस्तों के लिए वैलेंटाइन डे संदेश", "जीवन सुविचार", "दोस्ती शाइरी",
-      "दर्द भरी शाइरी", "बेवफा शाइरी", "रोमांटिक शाइरी", "मजेदार चुटकुले", "महाकाल स्टेटस",
-      "देशभक्ति शाइरी", "सफलता स्टेटस", "इमोशनल कोट्स", "रिलेशनशिप टिप्स", "रात की तन्हाई"
-    ];
-
-    baseCategories.forEach(cat => {
-      categoryDatabase[cat] = [];
-      for (let j = 1; j <= 50; j++) {
-        categoryDatabase[cat].push(`✨ ${cat} - स्पेशल संस्करण संग्रह #${j}:\nजिंदगी में हर पल खास होता है, जब अपनों का साथ और दिल में प्यार का एहसास होता है! (शाइरी कोड: ${j})`);
-      }
-    });
-
-    const wallpapers = [
-      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&auto=format&fit=crop&q=60"
-    ];
-    const filterColors = ["rgba(0,0,0,0.55)", "rgba(88,28,135,0.65)", "rgba(15,23,42,0.7)", "rgba(190,24,93,0.6)"];
-    let activeLang = 'hi';
-
-    const langCats = {
-      hi: baseCategories,
-      gu: ["શુભ સવાર સંદેશ", "શુભ રાત્રિ સંદેશ", "પ્રેમ ભરી શાયરી", "ટોપ શાયરી સંગ્રહ", "જન્મદિવસ શુભેચ્છાઓ", "જીવન સુવિચાર"],
-      en: ["Good Morning Wishes", "Love & Romance", "Top Inspiring Quotes", "Life Lessons", "Deep Thoughts"]
-    };
 
     function openDirectAd() {
-      const url = adLinks[adIndex];
+      window.open(adLinks[adIndex], '_blank');
       adIndex = (adIndex + 1) % adLinks.length;
-      window.open(url, '_blank');
     }
 
-    function openTelegramChannel() {
+    function openTelegram() {
       openDirectAd();
       setTimeout(() => { window.open(telegramLink, '_blank'); }, 300);
     }
 
-    function openWebsiteStore() {
-      openDirectAd();
-      setTimeout(() => { window.open(websiteStoreLink, '_blank'); }, 300);
-    }
+    const baseSubjects = [
+      { key: "Dadi", tag: "👵 Dadi & Magic Rabbit", hi: "દાદી અને જાદુઈ સસલું", gu: "દાદી અને જાદુઈ સસલું", en: "Dadi & Magic Rabbit", dHi: "Dadi Maa finds an injured glowing magical rabbit in her village farm. Feeding him grants a tree full of golden coins.", dGu: "દાદી માં ખેતરમાં ઘાયલ જાદુઈ સસલાને બચાવે છે, જે સોનાના સિક્કાનું ઝાડ આપે છે.", dEn: "Dadi Maa finds an injured glowing magical rabbit in her village farm." },
+      { key: "Jungle", tag: "🦁 Jungle Motivation", hi: "ચકલી અને ઘમંડી સિંહ", gu: "ચકલી અને ઘમંડી સિંહ", en: "Bird & Proud Lion", dHi: "A proud Lion trapped in a hunter's net and a tiny brave bird rescuing him by cutting the ropes with her beak.", dGu: "ઘમંડી સિંહ શિકારીની જાળમાં ફસાય છે અને નાની ચકલી પોતાની ચાંચથી જાળ કાપીને તેને બચાવે છે.", dEn: "A proud Lion trapped in a hunter's net and a tiny brave bird rescuing him." },
+      { key: "Horror", tag: "😱 Horror Mystery", hi: "કાચનો રહસ્યમય ભૂત", gu: "કાચનો રહસ્યમય ભૂત", en: "Eerie Mirror Ghost", dHi: "An eerie mirror reflection starts moving on its own at 3:00 AM in an old village house with creepy sound effects.", dGu: "રાત્રે 3 વાગે જૂના ઘરના અરીસામાં પરછાયો પોતાની મેળે હલવા લાગે છે.", dEn: "An eerie mirror reflection starts moving on its own at 3:00 AM." },
+      { key: "Fox", tag: "🦊 Clever Fox & Monkey", hi: "ચાલાક શિયાળ અને વાંદરો", gu: "ચાલાક શિયાળ અને વાંદરો", en: "Clever Fox & Monkey", dHi: "A clever fox tricks a foolish monkey into a trap in search of sweet mangoes in the deep jungle.", dGu: "ચાલાક શિયાળ મૂર્ખ વાંદરાને મીઠી કેરીઓની લાલચ આપી ફસાવે છે.", dEn: "A clever fox tricks a foolish monkey into a trap in search of sweet mangoes." },
+      { key: "Akbar", tag: "👑 Akbar Birbal Wit", hi: "અકબર અને બીરબલની ચતુરાઈ", gu: "અકબર અને બીરબલની ચતુરાઈ", en: "Akbar Birbal Wit", dHi: "Birbal solves an impossible royal mystery using clever wit and quick problem-solving techniques.", dGu: "બીરબલ પોતાની ચતુરાઈથી રાજા અકબરના અઘરા સવાલનો જવાબ આપે છે.", dEn: "Birbal solves an impossible royal mystery using clever wit." },
+      { key: "Elephant", tag: "🐘 Elephant & Tailor", hi: "હાથી અને દરજીની મિત્રતા", gu: "હાથી અને દરજીની મિત્રતા", en: "Elephant & Tailor", dHi: "A friendly elephant and a village tailor teach a heartwarming lesson about kindness and friendship.", dGu: "એક દયાળુ હાથી અને ગામના દરજીની પ્રેરણાદાયી મિત્રતાની વાર્તા.", dEn: "A friendly elephant and a village tailor teach a heartwarming lesson." },
+      { key: "Owl", tag: "🦉 Wise Owl Story", hi: "જંગલનું ડાયું ગૂવડ", gu: "જંગલનું ડાયું ગૂવડ", en: "Wise Owl Story", dHi: "An old wise owl helps all animals of the deep jungle solve water scarcity during hot summer days.", dGu: "જંગલના પ્રાણીઓને ઉનાળામાં પાણીની સમસ્યા ઉકેલવામાં ડાયું ગૂવડ મદદ કરે છે.", dEn: "An old wise owl helps all animals of the deep jungle solve water scarcity." },
+      { key: "Billionaire", tag: "🚀 Billionaire Habits", hi: "અમીર બનવાના ગુપ્ત નિયમો", gu: "અમીર બનવાના ગુપ્ત નિયમો", en: "Billionaire Habits", dHi: "Morning routine and secret high-productivity habits followed by self-made world billionaires.", dGu: "દુનિયાના સૌથી અમીર લોકોની સવારની દિનચર્યા અને સફળતાના રહસ્યો.", dEn: "Morning routine and secret high-productivity habits followed by billionaires." },
+      { key: "Mahakal", tag: "🕉️ Mahakal Tandav", hi: "મહાકાલ શિવ તાંડવ રહસ્ય", gu: "મહાકાલ શિવ તાંડવ રહસ્ય", en: "Mahakal Tandav Mystery", dHi: "Awe-inspiring cinematic shorts script depicting Lord Shiva opening his third eye with powerful damru sound.", dGu: "ભોળાનાથ મહાકાલની ત્રીજી આંખ અને શિવ તાંડવનું રોમાંચક વર્ણન.", dEn: "Awe-inspiring cinematic shorts script depicting Lord Shiva opening his third eye." },
+      { key: "AI", tag: "💡 AI Future 2050", hi: "ભવિષ્યની દુનિયા 2050 AI", gu: "ભવિષ્યની દુનિયા 2050 AI", en: "AI Future 2050", dHi: "Futuristic sci-fi shorts script exploring flying cars, AI humanoids and advanced Martian colonies.", dGu: "વર્ષ 2050 ની ફ્યુચરિસ્ટિક દુનિયા, ઉડતી કાર અને રોબોટ્સની અદભુત કહાની.", dEn: "Futuristic sci-fi shorts script exploring flying cars and Martian colonies." },
+      { key: "Krishna", tag: "🌊 Krishna Leela", hi: "બાળકૃષ્ણ અને માખણલીલા", gu: "બાળકૃષ્ણ અને માખણલીલા", en: "Baby Krishna Makhan Leela", dHi: "Sweet mischievous stories of little Krishna stealing butter in Gokul and amazing all the Gopis.", dGu: "ગોકુળમાં કાનુડાની માખણ ચોરી અને ગોપીઓની મનોહર લીલાઓ.", dEn: "Sweet mischievous stories of little Krishna stealing butter in Gokul." },
+      { key: "Ramayan", tag: "🏹 Ramayan Jatayu", hi: "શ્રી રામ અને જટાયુ ગાથા", gu: "શ્રી રામ અને જટાયુ ગાથા", en: "Ramayan Jatayu Katha", dHi: "The brave sacrifice of mighty bird Jatayu while fighting Ravana to save Sita Mata in the forest.", dGu: "માતા સીતાને બચાવવા માટે પક્ષીરાજ જટાયુનું મહાન પરાક્રમ અને બલિદાન.", dEn: "The brave sacrifice of mighty bird Jatayu while fighting Ravana." }
+    ];
 
-    function downloadYonoApp(appUrl) {
-      openDirectAd();
-      setTimeout(() => { window.open(appUrl, '_blank'); }, 350);
-    }
-
-    function renderYonoApps(listToRender = yonoAppsList) {
-      const container = document.getElementById('yono-apps-container');
-      container.innerHTML = '';
-      listToRender.forEach(app => {
-        const div = document.createElement('div');
-        div.className = 'yono-card';
-        div.innerHTML = `
-          <div class="yono-left">
-            <div class="yono-icon"><i class="fa-solid ${app.icon}"></i></div>
-            <div class="yono-info">
-              <h4>${app.name}</h4>
-              <div class="yono-meta">
-                <span class="yono-tag">${app.bonus}</span>
-                <span class="yono-rating"><i class="fa-solid fa-star"></i> 4.9</span>
-              </div>
-            </div>
-          </div>
-          <button class="yono-download-btn" onclick="downloadYonoApp('${app.link}')">
-            <i class="fa-solid fa-download"></i> Get App
-          </button>
-        `;
-        container.appendChild(div);
+    let appDatabase = [];
+    for(let i = 1; i <= 10000; i++) {
+      let base = baseSubjects[i % baseSubjects.length];
+      appDatabase.push({
+        id: i,
+        category: base.key,
+        tag: base.tag,
+        tHi: `${base.hi} (Part ${Math.floor(i/12)+1}) #${i}`,
+        tGu: `${base.gu} (ભાગ ${Math.floor(i/12)+1}) #${i}`,
+        tEn: `${base.en} (Chapter ${Math.floor(i/12)+1}) #${i}`,
+        dHi: `Script #${i}: ${base.dHi} [Focus: High retention hook, Pixar style 3D animation, viral sound effects].`,
+        dGu: `స్క్రీప్ట్ #${i}: ${base.dGu} [વૈશિષ્ટ્ય: વાયરલ શોર્ટ વિડિયો ફોર્મેટ].`,
+        dEn: `Script #${i}: ${base.dEn} [Optimized for YouTube Shorts & Instagram Reels].`,
+        unlocked: false
       });
     }
 
-    function filterYonoApps() {
-      const query = document.getElementById('yono-search').value.toLowerCase();
-      const filtered = yonoAppsList.filter(app => app.name.toLowerCase().includes(query) || app.bonus.toLowerCase().includes(query));
-      renderYonoApps(filtered);
-    }
+    let activeDataList = appDatabase;
+    let pageNumber = 1;
+    const limitPerPage = 20;
+    let currentLang = 'hi';
+    let currentCategory = 'all';
 
-    function renderPrompts(listToRender = promptsList) {
-      const container = document.getElementById('prompts-container');
-      container.innerHTML = '';
-      listToRender.slice(0, 100).forEach(p => { // Renders efficiently with lazy load capability
-        const div = document.createElement('div');
-        div.className = 'prompt-card';
-        div.innerHTML = `
-          <span class="prompt-tag">${p.tag}</span>
-          <div class="prompt-title">${p.title}</div>
-          <div class="prompt-box" id="pbox-${p.id}">${p.box}</div>
-          <button class="unlock-prompt-btn" id="pbtn-${p.id}" onclick="handlePromptAction(${p.id})">
-            <i class="fa-solid fa-lock" id="pico-${p.id}"></i> <span id="ptxt-${p.id}">Unlock & Copy</span>
-          </button>
-        `;
-        container.appendChild(div);
-      });
-    }
+    function renderGalleryView() {
+      let gridContainer = document.getElementById('grid-container');
+      if(!gridContainer) return;
+      gridContainer.innerHTML = '';
 
-    function filterPromptCards() {
-      const query = document.getElementById('prompt-search').value.toLowerCase();
-      const filtered = promptsList.filter(p => p.title.toLowerCase().includes(query) || p.box.toLowerCase().includes(query));
-      renderPrompts(filtered);
-    }
+      let maxPages = Math.ceil(activeDataList.length / limitPerPage);
+      if(pageNumber > maxPages) pageNumber = maxPages || 1;
+      if(pageNumber < 1) pageNumber = 1;
 
-    function openYonoView() {
-      document.getElementById('category-view').style.display = 'none';
-      document.getElementById('detail-view').style.display = 'none';
-      document.getElementById('prompts-view').style.display = 'none';
-      document.getElementById('yono-view').style.display = 'block';
-      window.scrollTo(0, 0);
-      renderYonoApps();
-      openDirectAd();
-    }
+      let start = (pageNumber - 1) * limitPerPage;
+      let end = start + limitPerPage;
+      let pageSlice = activeDataList.slice(start, end);
 
-    function openPromptsView() {
-      document.getElementById('category-view').style.display = 'none';
-      document.getElementById('detail-view').style.display = 'none';
-      document.getElementById('yono-view').style.display = 'none';
-      document.getElementById('prompts-view').style.display = 'block';
-      window.scrollTo(0, 0);
-      renderPrompts();
-      openDirectAd();
-    }
-
-    function handlePopupClick() {
-      openDirectAd();
-      closePopup();
-    }
-
-    function closePopup() {
-      document.getElementById('start-popup').style.display = 'none';
-    }
-
-    function checkAdTrigger() {
-      clickCount++;
-      if (clickCount % 2 === 0) openDirectAd();
-    }
-
-    function shareApp() {
-      const text = "Download 1000+ Shayari, AI Prompts & 50+ YONO Apps Hub by Jogarajiya Rajesh!";
-      if (navigator.share) {
-        navigator.share({ title: 'Mega Hub App', text: text, url: window.location.href });
-      } else {
-        window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text + ' ' + window.location.href), '_blank');
+      if(pageSlice.length === 0) {
+        gridContainer.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:#94a3b8;">No scripts found!</div>`;
+        document.getElementById('page-indicator').innerText = `Page 0 of 0`;
+        return;
       }
-      openDirectAd();
+
+      pageSlice.forEach((item) => {
+        let title = currentLang === 'gu' ? item.tGu : (currentLang === 'en' ? item.tEn : item.tHi);
+        let text = currentLang === 'gu' ? item.dGu : (currentLang === 'en' ? item.dEn : item.dHi);
+        let btnText = currentLang === 'gu' ? "અનલૉક કરો & કૉપિ કરો" : (currentLang === 'en' ? "Unlock & Copy Script" : "Unlock & Copy Script");
+        if(item.unlocked) {
+          btnText = currentLang === 'gu' ? "કૉપિ થઈ ગયું ✅" : (currentLang === 'en' ? "Unlocked - Copy Script" : "Unlocked - Copy Script");
+        }
+
+        let cardDiv = document.createElement('div');
+        cardDiv.className = 'prompt-card';
+        cardDiv.innerHTML = `
+          <div class="card-content">
+            <div>
+              <span class="card-badge">${item.tag}</span>
+              <div class="card-title">${title}</div>
+              <div class="prompt-text-box" id="box-${item.id}" style="${item.unlocked ? 'filter:none; opacity:1; user-select:text;' : ''}">${text}</div>
+            </div>
+            <button class="unlock-btn" id="btn-${item.id}" onclick="handleUnlockAction(${item.id})">
+              <i class="${item.unlocked ? 'fa-solid fa-check' : 'fa-solid fa-lock'}"></i> <span id="btntxt-${item.id}">${btnText}</span>
+            </button>
+          </div>
+        `;
+        gridContainer.appendChild(cardDiv);
+      });
+
+      let pageIndicator = document.getElementById('page-indicator');
+      if(pageIndicator) pageIndicator.innerText = `Page ${pageNumber} of ${maxPages}`;
     }
 
-    function robustCopy(text, customSuccessMsg = "Copied to clipboard! ✅") {
-      try {
-        const tempTextArea = document.createElement("textarea");
-        tempTextArea.value = text;
-        tempTextArea.setAttribute("readonly", "");
-        tempTextArea.style.position = "fixed";
-        tempTextArea.style.left = "-9999px";
-        document.body.appendChild(tempTextArea);
-        tempTextArea.focus();
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
-      } catch (e) {}
-      showToast(customSuccessMsg);
-    }
+    function handleUnlockAction(id) {
+      let item = appDatabase.find(p => p.id === id);
+      if(!item) return;
+      let box = document.getElementById('box-' + id);
+      let btn = document.getElementById('btn-' + id);
+      let btntxt = document.getElementById('btntxt-' + id);
+      let text = currentLang === 'gu' ? item.dGu : (currentLang === 'en' ? item.dEn : item.dHi);
 
-    function handleCardCopy(encodedText) {
-      openDirectAd();
-      robustCopy(decodeURIComponent(encodedText), "Ad Opened! Copied ✅");
-    }
+      openDirectAd(); // Opens Adsterra Ad
 
-    function handlePromptAction(id) {
-      const box = document.getElementById('pbox-' + id);
-      const btn = document.getElementById('pbtn-' + id);
-      const ptxt = document.getElementById('ptxt-' + id);
-      const pico = document.getElementById('pico-' + id);
-      const promptText = box ? box.innerText : "";
-
-      const isAlreadyUnlocked = btn && btn.getAttribute('data-unlocked') === 'true';
-
-      if (!isAlreadyUnlocked) {
-        openDirectAd();
-        if (box) {
+      if(!item.unlocked) {
+        item.unlocked = true;
+        if(box) {
           box.style.filter = "none";
           box.style.opacity = "1";
           box.style.userSelect = "text";
         }
-        if (btn) {
+        if(btn) {
           btn.style.background = "linear-gradient(135deg, #10b981, #059669)";
-          btn.setAttribute('data-unlocked', 'true');
+          let icon = btn.querySelector('i');
+          if(icon) icon.className = "fa-solid fa-check";
         }
-        if (pico) pico.className = "fa-solid fa-check";
-        if (ptxt) ptxt.innerText = "Unlocked - Copy";
-
-        robustCopy(promptText, "Ad Opened! Prompt Unlocked ✅");
-      } else {
-        robustCopy(promptText, "Prompt Copied! ✅");
-        checkAdTrigger();
+        if(btntxt) btntxt.innerText = currentLang === 'gu' ? "અનલૉક થઈ ગયું - કૉપિ કરો" : "Unlocked - Copy Script";
       }
-    }
 
-    function showCategoryView() {
-      document.getElementById('detail-view').style.display = 'none';
-      document.getElementById('prompts-view').style.display = 'none';
-      document.getElementById('yono-view').style.display = 'none';
-      document.getElementById('category-view').style.display = 'block';
-      window.scrollTo(0, 0);
-      checkAdTrigger();
-    }
-
-    function populateCategories() {
-      const list = document.getElementById('cat-list');
-      list.innerHTML = '';
-      langCats[activeLang].forEach(cat => {
-        const li = document.createElement('li');
-        li.className = 'category-item';
-        li.innerHTML = `<span>${cat} (50+ Items)</span> <i class="fa-solid fa-chevron-right" style="color:#cbd5e1; font-size:14px;"></i>`;
-        li.onclick = () => openCategory(cat);
-        list.appendChild(li);
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Ad Opened & Script Copied! ✅");
       });
     }
 
-    function changeLanguage(lang) {
-      activeLang = lang;
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('btn-' + lang).classList.add('active');
-      populateCategories();
+    function filterByCategory(catKey, el) {
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      currentCategory = catKey;
+
+      if(catKey === 'all') {
+        activeDataList = appDatabase;
+      } else {
+        activeDataList = appDatabase.filter(p => p.category === catKey);
+      }
+      pageNumber = 1;
       openDirectAd();
+      renderGalleryView();
     }
 
-    function filterChips(type) {
-      document.querySelectorAll('.menu-chip').forEach(c => c.classList.remove('active'));
-      event.target.classList.add('active');
-      checkAdTrigger();
-    }
+    function changeLanguage(langCode, el) {
+      document.querySelectorAll('.lang-chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      currentLang = langCode;
 
-    let currentActiveCategory = "";
-    function openCategory(title) {
-      currentActiveCategory = title;
-      document.getElementById('category-view').style.display = 'none';
-      document.getElementById('prompts-view').style.display = 'none';
-      document.getElementById('yono-view').style.display = 'none';
-      document.getElementById('detail-view').style.display = 'block';
-      document.getElementById('detail-title').innerText = title;
-      window.scrollTo(0, 0);
-      renderCards(title);
+      let heroTitle = document.getElementById('hero-title');
+      if(heroTitle) {
+        if(langCode === 'gu') {
+          heroTitle.innerText = "🎬 વાયરલ દાદી અને કહાની શોર્ટ સ્ક્રીપ્ટ્સ";
+        } else if(langCode === 'en') {
+          heroTitle.innerText = "🎬 Viral AI Dadi & Kahaniya Scripts Hub";
+        } else {
+          heroTitle.innerText = "🎬 Viral AI Dadi & Kahaniya Scripts";
+        }
+      }
+
       openDirectAd();
+      renderGalleryView();
     }
 
-    function renderCards(categoryTitle, filterQuery = "") {
-      const box = document.getElementById('cards-container');
-      box.innerHTML = '';
+    function changePage(directionStep) {
+      let maxPages = Math.ceil(activeDataList.length / limitPerPage);
+      let targetPage = pageNumber + directionStep;
+
+      if(targetPage >= 1 && targetPage <= maxPages) {
+        openDirectAd(); // Opens Adsterra on page change
+        pageNumber = targetPage;
+        renderGalleryView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function filterScripts() {
+      let searchInput = document.getElementById('prompt-search');
+      if(!searchInput) return;
+      let queryText = searchInput.value.toLowerCase();
       
-      let specificQuotes = categoryDatabase[categoryTitle] || categoryDatabase["प्रेम संदेश"];
-      if (filterQuery) {
-        specificQuotes = specificQuotes.filter(q => q.toLowerCase().includes(filterQuery.toLowerCase()));
-      }
-
-      specificQuotes.forEach((text, i) => {
-        const bg = wallpapers[i % wallpapers.length];
-        const card = document.createElement('div');
-        card.className = 'shayari-card';
-        card.innerHTML = `
-          <div class="card-banner" id="banner-${i}" style="background-image: url('${bg}')">
-            <div class="card-overlay" id="overlay-${i}"></div>
-            <div class="card-text" id="text-${i}">${text}</div>
-          </div>
-          <div class="style-bar">
-            <span><b>🎨 Style:</b></span>
-            <button class="style-btn" onclick="changeBgPhoto(${i})"><i class="fa-solid fa-image"></i> Photo</button>
-            <button class="style-btn" onclick="changeBgFilter(${i})"><i class="fa-solid fa-wand-magic-sparkles"></i> Color</button>
-            <button class="style-btn" onclick="changeFontSize(${i})"><i class="fa-solid fa-text-height"></i> Size</button>
-          </div>
-          <div class="card-footer">
-            <button class="action-btn" onclick="handleCardCopy('${encodeURIComponent(text)}')">
-              <i class="fa-regular fa-copy"></i>
-              <span>Copy</span>
-            </button>
-            <button class="action-btn" onclick="openDirectAd()">
-              <i class="fa-solid fa-download"></i>
-              <span>Save HD</span>
-            </button>
-            <button class="action-btn" onclick="shareCardShayari('${encodeURIComponent(text)}')">
-              <i class="fa-solid fa-share-nodes"></i>
-              <span>Share</span>
-            </button>
-          </div>
-        `;
-        box.appendChild(card);
-      });
+      let baseList = currentCategory === 'all' ? appDatabase : appDatabase.filter(p => p.category === currentCategory);
+      activeDataList = baseList.filter(p => 
+        p.tHi.toLowerCase().includes(queryText) || 
+        p.dHi.toLowerCase().includes(queryText) ||
+        p.tGu.toLowerCase().includes(queryText)
+      );
+      pageNumber = 1;
+      renderGalleryView();
     }
 
-    function filterShayariCards() {
-      const query = document.getElementById('shayari-search').value;
-      renderCards(currentActiveCategory, query);
+    function showToast(message) {
+      let toastElement = document.getElementById('toast');
+      if(!toastElement) return;
+      toastElement.innerText = message;
+      toastElement.style.display = 'block';
+      setTimeout(() => { toastElement.style.display = 'none'; }, 2200);
     }
 
-    function changeBgPhoto(cardIndex) {
-      const banner = document.getElementById(`banner-${cardIndex}`);
-      banner.style.backgroundImage = `url('${wallpapers[Math.floor(Math.random() * wallpapers.length)]}')`;
-      checkAdTrigger();
-    }
-
-    function changeBgFilter(cardIndex) {
-      const overlay = document.getElementById(`overlay-${cardIndex}`);
-      overlay.style.background = filterColors[Math.floor(Math.random() * filterColors.length)];
-      checkAdTrigger();
-    }
-
-    function changeFontSize(cardIndex) {
-      const textElem = document.getElementById(`text-${cardIndex}`);
-      const currentSize = parseInt(window.getComputedStyle(textElem).fontSize);
-      textElem.style.fontSize = (currentSize >= 18 ? 14 : currentSize + 2) + 'px';
-      checkAdTrigger();
-    }
-
-    function shareCardShayari(encodedText) {
-      openDirectAd();
-      const text = decodeURIComponent(encodedText);
-      if (navigator.share) {
-        navigator.share({ text: text });
-      } else {
-        window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
-      }
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.innerText = msg;
-      toast.style.display = 'block';
-      setTimeout(() => { toast.style.display = 'none'; }, 2000);
-    }
-
-    populateCategories();
-  </script>
-</
+    window.onload = function() {
+      renderGalleryView();
+    };
+    rend
